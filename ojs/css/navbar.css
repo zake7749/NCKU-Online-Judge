@@ -1,0 +1,45 @@
+
+@font-face {
+  font-family: "webTE";
+  src: url("webTE.woff");
+}
+
+@font-face{
+  font-family: "Hack";
+  src: url("Hack-Regular.ttf");
+}
+
+.fixed-raidus{
+  border-radius: 0px;
+  font-family: "webTE";
+}
+
+.light-green{
+  background-color: #66CCCC !important;
+}
+
+.fixed-raidus a{
+  font-size: 14px;
+  color : #FAFAFA;
+  text-shadow: rgba(0, 0, 0, 0.35) 1px 1px 0px !important;
+}
+
+.fixed-margin{
+  margin-right: 5px !important;
+}
+
+.fixed-margin-list{
+  margin-right: 3px;
+}
+
+.fixed-raidus a:hover{
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.fixed-raidus a:focus{
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.navbar-nav .active{
+  background-color: rgba(0, 0, 0, 0.28);
+}
