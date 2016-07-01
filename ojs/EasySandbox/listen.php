@@ -62,7 +62,7 @@ function survey($link){
         $output = shell_exec($command);
         echo $output;
 
-        if(substr_count($output,"passed!")!=0){
+        if(substr_count($output,"passed!")!=0 ||substr_count($output,"newline")!=0){
           //accepted.
           echo("->SID:$solveid is passed,which is submit by $username<br/>");
           $query = "UPDATE `sloveBoard` SET pstate='Accepted' WHERE `solveid`=".$solveid;
@@ -137,7 +137,7 @@ function survey($link){
       <?php
         while(1){
           survey($link);
-          sleep(60);// 等待5s
+          sleep(30);// 等待30s
         }
       ?>
     </div>
