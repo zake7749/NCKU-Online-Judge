@@ -6,6 +6,7 @@
 <head>
   <link rel="stylesheet" href="css/main.css">
   <meta charset="utf-8">
+  <title>ProblemSet</title>
 
   <script>
 

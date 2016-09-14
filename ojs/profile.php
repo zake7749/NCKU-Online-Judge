@@ -3,6 +3,7 @@
   require("config/config.php");
 ?>
 <head>
+  <title>Personal profile</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/profile.css">
   <link rel="stylesheet" href="css/github.css">
@@ -141,7 +142,7 @@
                     <div class="contrib-column table-column">
                       <span class="text-muted">Your accepted</span>
                         <span class="contrib-number"><a href="accpet.php?username=<?php echo $username;?>"><?php echo $acCount[0];?> problems</a></span>
-                        
+
                     </div>
                   </div>
                 </div>

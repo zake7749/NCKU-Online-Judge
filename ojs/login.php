@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/formBoard.css">
   <link rel="stylesheet" href="css/main.css">
+  <title>Login</title>
 </head>
 
 <script>

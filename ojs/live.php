@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/tag.css">
   <meta charset="utf-8">
+  <title>Live list</title>
 </head>
 <div id="wrap" >
   <section id="Main" class="container clearfix border-box">

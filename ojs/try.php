@@ -6,6 +6,7 @@
 <head>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/tag.css">
+  <title>Tried list</title>
   <meta charset="utf-8">
 </head>
 

@@ -5,6 +5,7 @@
 
 <head>
   <link rel="stylesheet" href="css/main.css">
+  <title>Star list</title>
   <meta charset="utf-8">
 </head>
 

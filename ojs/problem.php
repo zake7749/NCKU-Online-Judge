@@ -17,6 +17,7 @@
   $output = nl2br($rows["poutput"]);
 ?>
   <head>
+    <title>Problem</title>
     <link rel="stylesheet" href="css/main.css">
     <meta charset="utf-8">
     <script>

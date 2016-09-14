@@ -5,6 +5,7 @@
       require("config/config.php");
     ?>
     <head>
+      <title>Add a problem</title>
       <link rel="stylesheet" href="css/main.css">
       <meta charset="utf-8">
     </head>

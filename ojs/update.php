@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/profile.css">
   <link rel="stylesheet" href="css/github.css">
   <meta charset="utf-8">
+  <title>Update profile</title>
 </head>
 
 <script>

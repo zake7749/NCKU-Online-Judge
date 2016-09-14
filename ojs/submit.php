@@ -4,6 +4,7 @@
 ?>
 <head>
   <link rel="stylesheet" href="css/main.css">
+  <title>Submit</title>
   <link rel="stylesheet" href="css/formBoard.css">
   <meta charset="utf-8">
 </head>
