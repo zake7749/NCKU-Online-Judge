@@ -9,5 +9,8 @@
 * 測試題目集來自 [UVA](https://uva.onlinejudge.org/) 與 [POJ](http://poj.org/)。
 
 ## 搭建環境
+
 * Ubuntu 14.04 與 Linux Mint Cinnamon 皆可正常運作
-* 需配備 GNU C 與 Apache、PHP 運作環境
+* 伺服端須搭載 PHP、MySQL 與 Apache
+* 沙盒端要求配置好 GNU C
+  * 可以透過 `make runtests` 測試 [EasySandbox](https://github.com/daveho/EasySandbox) 是否正常運作
