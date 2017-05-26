@@ -16,6 +16,12 @@
 * 沙盒端要求配置好 GNU C
   * 可以透過 `make runtests` 測試 [EasySandbox](https://github.com/daveho/EasySandbox) 是否正常運作
   
-## 備註
+## 注意事項
 
-受限於資源需求，目前自動判題端關閉中 (提交後為 PENDING　狀態)。
+* 受限於資源需求，目前線上演示中的自動判題端為關閉狀態 (提交後為 PENDING )。
+
+### 為什麼很容易爆炸?
+
+* 目前判題僅支援 C/C++，其他語言會直接 Wrong Answer
+* 程式的限制運行時間為 30 秒，超過會直接 Wrong Answer
+* 預設每個答案最後都必須接上一個 `\n`，若找不到一樣會 Wrong Answer
