@@ -1,0 +1,107 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Demostation of generative based chatter bot">
+    <meta name="author" author="Kai Chou Yang">
+    <title>Sandbox API Demo</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+
+    <!--materialize-->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <script src="js/materialize.min.js"></script>   
+
+    <!--AwesomeFonts-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!--code mirror-->
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="codemirror/theme/dracula.css"/>
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/clike/clike.js"></script>
+    <script src="codemirror/mode/javascript/javascript.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('select').formSelect();
+          });
+    </script>
+</head>
+
+
+<body>
+    <div class='left-sidenav'>
+        <a class="sidebar-logo" href="#">S</a>
+        <div class="sidebar-element-container">
+            <a class="sidebar-element-container" href="#">
+                <i class="fas fa-chart-area sidebar-element"></i>
+            </a>    
+            <a class="sidebar-element-container" href="#">
+                <i class="fas fa-info-circle sidebar-element"></i>
+            </a>
+            <a class="sidebar-element-container" href="https://github.com/zake7749/NCKU-Online-Judge">
+                <i class="fab fa-github sidebar-element"></i>
+            </a>
+        </div>
+    </div>
+    <div class='main-container'>
+        <div class='code-container'>
+            <div class="code-plane">
+                <textarea class="form-control" id="code-area" name="code"></textarea>
+            </div>
+        </div>
+        <div class='right-side-bar'>
+            <div class='right-container'>
+                <div class='info'>
+                    <h2># Welcome to the Sandbox playground</h2>
+                </div>
+                <form id='compile-config'>
+                <div class="input-field input-form">
+                        <select id="compile-language">
+                            <option value="" disabled selected>Choose your programming language</option>
+                            <option value="C">C</option>
+                            <option value="Java">Java</option>
+                            <option value="Python">Python</option>
+                        </select>
+                        <label>programming language</label>
+                    </div>
+                    <div class="input-field input-form">
+                        <select id="compile-language">
+                            <option value="" disabled selected>Choose your runtime environment</option>
+                            <option value="C">GCC 4.4.7</option>
+                            <option value="Python3.5">Python3.5</option>
+                            <option value="Python3.6">Python3.6</option>
+                        </select>
+                        <label>runtime environment</label>
+                        <a id='submit-code' class="waves-effect waves-light btn" style="float:right;">Submit</a>
+                    </div>
+                </form>
+            </div>
+            <div class='right-container result-containter'>
+                    <h2># Running result</h2>
+                    <div class='result-block'>
+                        <div id='code-out'>output:</div>
+                        <div id='code-memory'>memory usage:</div>
+                        <div id='code-vcpu'>cpu time:</div>
+                        <div id='code-realtime'>real run time:</div>
+                        <div id='code-error'>error:</div>
+                        <div id='code-result'>result:</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code-area"),
+            {
+                value: "type your code here",
+                lineNumbers: true,
+                mode: "text/x-csrc",
+                theme: "dracula",
+                lineWrapper:true,
+            });
+            myCodeMirror.setSize("100%", "100%");
+
+            $('#submit-code').click(function() {
+                sendRequest(myCodeMirror);
+            });
+    </script>
+</body>

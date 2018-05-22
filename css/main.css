@@ -1,0 +1,133 @@
+body {
+    margin: auto 0px !important;
+    padding: 0px 0px !important;
+    background: #333;
+    color: #aaa;
+
+}
+
+@font-face {
+    font-family: "Lunchtype";
+    src: url("../fonts/Lunchtype22-Light.ttf");
+}
+
+.code-container{
+    width: 60%;
+    float: left;
+}
+
+.code-plane{
+    float:right;
+    width: 100%;
+}
+
+.site-logo{
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    font-family: "Lunchtype";
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    color: #BBB !important;
+}
+
+.left-sidenav{
+    width: 54px;
+    height: 100%;
+    float: left;
+    background-color: #111;
+}
+
+.left-sidenav .sidebar-logo {
+    padding: 8px 8px 8px 18px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #EEE;
+    background-color: #ff6d4c;
+    font-family: "Lunchtype";
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar-logo:hover{
+    background-color: #ff6d4c;
+    color: #F9F9F9;
+    transition: 0.2s ease-in-out;
+}
+
+.left-sidenav .sidebar-element-contain{
+    padding: 0px 0px;
+}
+
+.left-sidenav .sidebar-element {
+    padding: 15px 13px 14px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #EEE;
+    display: block;
+    border-bottom: #333 1px solid;
+    transition: 0.2s ease-in-out;
+}
+
+.sidebar-element:hover{
+    background-color: #ff6d4c;
+    color: #F9F9F9;
+    transition: 0.2s ease-in-out;
+}
+
+.caret{
+    fill:rgba(100,100,100,0.87) !important;
+}
+
+.right-side-bar{
+    width: 35%;
+    height: 100%;
+    float: left;
+}
+
+.right-container{
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.right-container h2{
+    font-size: 32px;
+    color: #BBB;
+    font-family: "Lunchtype";
+}
+.info{
+    margin-bottom: 60px !important;
+}
+.input-form {
+    text-align: center;
+    margin-bottom: 30px !important;
+    width:100%;
+}
+
+.input-field input[type=text]{
+    color: #EEE;
+}
+
+.input[type="range"]{
+    border: none !important;
+}
+
+.result-containter{
+    margin-top:100px;
+}
+
+.result-block{
+    color: #EEE;
+    border: 1px solid #555;
+    width:100%;
+}
+
+.main-container{
+    height: 100%;
+}
+
+.result-block{
+    padding: 4px 8px;
+    color: #BBB;
+    border-radius: 1px;
+}

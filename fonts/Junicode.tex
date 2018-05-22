@@ -1,0 +1,514 @@
+%&program=xelatex
+%&encoding=UTF-8 Unicode
+
+\documentclass[a4paper]{article}
+
+\usepackage{fontspec}
+
+\usepackage{microtype}
+
+\setromanfont{Junicode}
+
+\newICUfeature{StyleSet}{1}{+ss01}
+\newICUfeature{StyleSet}{insular}{+ss02,-liga}
+\newICUfeature{StyleSet}{highline}{+ss04}
+\newICUfeature{StyleSet}{medline}{+ss05}
+\newICUfeature{StyleSet}{enlarged}{+ss06}
+\newICUfeature{StyleSet}{underdot}{+ss07}
+\newICUfeature{StyleSet}{altyogh}{+ss08}
+\newICUfeature{StyleSet}{altpua}{+ss09}
+\newICUfeature{StyleSet}{althook}{+ss14}
+\newICUfeature{StyleSet}{altogonek}{+ss15}
+\newICUfeature{StyleSet}{oldpunct}{+ss18}
+\newICUfeature{MirrorRunes}{on}{+rtlm}
+\newICUfeature{LigType}{disc}{+dlig}
+\newICUfeature{LigType}{hist}{+hlig}
+\newICUfeature{LongS}{on}{+hist,+fina}
+\newICUfeature{IPAMode}{on}{+mgrk,-liga}
+\newICUfeature{Compose}{off}{-ccmp}
+\newICUfeature{Contextual}{on}{+calt}
+\newICUfeature{Swash}{on}{+swsh}
+\newICUfeature{Fractions}{on}{+frac}
+\newICUfeature{Superscripts}{on}{+sups}
+\newICUfeature{Subscripts}{on}{+subs}
+\newcommand{\sampletext}{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 12345 \fontspec[Numbers=OldStyle]{Junicode}12345}
+\newcommand{\sctext}{Cum multa divinitus, pontifices, a
+ma\-ioribus nos\-tris in\-venta atque in\-sti\-tuta sunt}
+
+\frenchspacing
+
+\begin{document}
+\large
+\section*{Junicode}
+
+\fontspec[Contextual=on]{Junicode}Version 0.7.2\\
+
+\noindent The Junicode font is designed to
+meet the needs of medieval scholars; however, it has a large enough
+character set to be useful to the general user. It comes in Regular,
+Italic, Bold and Bold Italic faces. The Regular face has the fullest
+character set, and is richest in OpenType features.
+
+Both the selection and design of the characters in Junicode reflect
+the needs of medievalists.  However, many persons writing in ancient
+and modern languages have found the font useful. If you wish to see
+better support for any language, please leave a request at the
+Junicode project page (http://sourceforge.net/projects/junicode).
+
+Junicode implements most of the recommendation of the Medieval Unicode
+Font Initiative (version 3.0).  Look for special MUFI characters
+(those not in the Unicode standard) in the Private Use Area (U+E000
+and above). Download the complete recommendation at
+http://www.mufi.info/.
+
+Junicode is licensed under the SIL Open Font License: for the full
+text, go to
+http://scripts.sil.org/OFL. Briefly: You may use Junicode in any
+kind of publication, print or electronic, without fee or
+restriction. You may modify the font for your own use. You may
+distribute your modified version in accordance with the terms of the
+license.
+
+\pagebreak
+\subsection*{OpenType Features}
+
+{\itshape Only OpenType-aware applications can make use of OpenType
+  features.  Among these are Adobe InDesign, Mellel, and (to a limited
+  extent) Microsoft Word. XeTeX, a typesetting program built on top of
+  TeX, has especially good support. The following are standard
+  OpenType features (not all available in all faces). For OpenType
+  features especially for medievalists, see the next section.}\\
+
+\noindent Like many old-style fonts, Junicode contains several f-ligatures
+(first flight offer office afflict fjord). It also has a number of
+other standard ligatures, e.g. thrift fifty afraid für fördern.  It
+also has long-s ligatures (aſſert ſtart ſlick omiſſion and more). Most
+OpenType-aware applications will use these by default. You can disable
+them by turning off “Standard Ligatures” (liga). {\itshape All
+  faces.}\\
+
+\noindent If “Contextual Alternates” (calt) and “Horizontal Kerning” (kern)
+are on (as they should be by default), Junicode will avoid collisions
+between f and vowels with diacritics, e.g.  fêler fíf fŭl.\\
+
+\noindent For circled numbers and letters, use “Discretionary Ligatures” (dlig):\\
+\hspace*{10pt}[1] {\fontspec[LigType=disc]{Junicode}= [1]}\\
+\hspace*{10pt}[A] {\fontspec[LigType=disc]{Junicode}= [A]}\\
+\hspace*{10pt}[a] {\fontspec[LigType=disc]{Junicode}= [a]}\\
+\hspace*{10pt}[[1]] {\fontspec[LigType=disc]{Junicode}= [[1]]}\\
+\hspace*{10pt}<1> {\fontspec[LigType=disc]{Junicode}= <1>}\\
+The same feature also gives you connected Roman numbers
+{\fontspec[LigType=disc]{Junicode}(I II III IV V VI VII VIII IX X XI
+  XII), and fancy ligatures, e.g. act star track bitten attract.}
+{\itshape Regular face only.}\\
+
+\noindent With “Glyph Composition/Decomposition” (ccmp), a base
+character followed by one or more combining diacritical marks is
+replaced with a precomposed character when that would look different
+from the character + diacritic sequence: for example A + U+301 makes Á,
+where a special upper-case form of the diacritic is used. {\itshape
+  All faces, depending on the availability of composed characters and
+  combining diacritics.}\\
+
+\noindent Where no precomposed character is available, combining marks should
+still be correctly positioned, and marks can be “stacked” via “Mark
+to Base” (mark) and “Mark to Mark” (mkmk): ŏ́ (o + U+306 + U+301);
+ī̆ (i + U+304 + U+306).  The dot of an i or j followed by a diacritic
+will generally be removed: i̽. {\itshape All faces; anchors less
+  plentiful in bold and italic faces than in regular; diacritic
+  stacking not available in bold italic.}\\
+
+\noindent Use “Small Caps” (smcp) to change lower-case letters to
+small caps; add “Caps to Small Caps” (c2sc) for text entirely in small
+caps. {\scshape Junicode has true small caps rather than scaled
+  capitals.} Special small cap versions of common combining diacritics
+are available, and these should be positioned correctly relative to
+the base characters: {\scshape äçé}. {\itshape Regular face
+  only.}\\
+
+\noindent You have a choice of either standard “lining” figures or old-style
+figures, selected by “Old-Style Numbers” (onum): 0123456789
+{\fontspec[Numbers=OldStyle]{Junicode}0123456789.} {\itshape All
+  faces.}\\
+
+\noindent Superscript numbers are rendered with “Superscripts” (sups):
+{\fontspec[Superscripts=on]{Junicode} 0123456789}.  Subscript numbers
+are rendered with “Subscripts” (subs):
+{\fontspec[Subscripts=on]{Junicode} 0123456789}.  {\itshape Regular
+  only.}\\
+
+\noindent A sequence of number + slash + number is rendered by a fraction if the
+fraction has a Unicode encoding and “Fractions” (frac) is on:
+{\fontspec[Fractions=on]{Junicode} 1/2 1/4 2/3 3/4}. {\itshape All
+  faces, but fullest in regular and bold.}\\
+
+\noindent The design of a few Junicode characters has changed since the font was
+introduced. The original designs, if you prefer them, will always be
+available via “Style Set 9” (ss09). Currently there are just a few
+such alternates: {\fontspec[StyleSet=altpua]{Junicode} ꝺ} for ꝺ,
+{\fontspec[StyleSet=altpua]{Junicode} T} for T,
+{\scshape{\fontspec[StyleSet=altpua]{Junicode} t} for t}.\\
+
+\noindent{\addfontfeature{StyleSet=oldpunct}Old books generally set
+extra space before the heavier punctuation marks (; : ! ?);
+they also leave extra space inside quotation marks and
+parentheses (e.g. “here”). For a similar effect, use Stylistic Set 18 (ss18). Make sure
+that Contextual Alternates are also on so that Junicode can correct
+the spacing in certain environments (but you will have to kern the English plural
+possessive apostrophe manually).}\\
+
+\noindent For XeLaTeX users who use the Microtype package for
+character protrusion, a
+configuration file (mt-Junicode.cfg) is provided for Junicode. Users
+of XeLaTeX will need Microtype version 2.5 (currently beta). The
+configuration file will work only with XeLaTeX, though it can probably be made
+to work with LuaTeX by commenting out the last five lines of the
+{\textbackslash}DeclareCharacterInheritance command.
+
+\pagebreak
+\subsection*{Notes on Junicode and MUFI}
+
+The MUFI specification defines a great many characters of interest to
+medievalists; the current version of Junicode contains most of
+these. While many MUFI characters have Unicode encodings, many others
+have MUFI-recommended encodings in the “Private Use Area” (PUA) of the
+Unicode standard—that is, a range of code points not assigned to
+Unicode characters and available for use in fonts for specialized
+purposes. Use of the PUA allows MUFI to include many characters that
+are not part of the Unicode standard.
+
+There are risks with this approach. First, use of the PUA is
+deprecated by Adobe and Microsoft (major players in fonts and type rendering),
+and it is uncertain whether applications will continue to support it
+indefinitely. Second, and probably more important, MUFI characters are
+regularly accepted by the Unicode Consortium, whereupon they lose their
+PUA encodings and receive Unicode encodings—breaking any
+application that uses them.
+
+To minimize these risks, the MUFI specification strongly recommends “that PUA
+characters should be encoded with mark-up or entities, and that PUA characters should be used for the final display only, whether on screen or in print.” An alternative to
+entities is the use of OpenType features. If you are using an OpenType-aware
+application (e.g. XeTeX, InDesign, Mellel, and to a limited extent MS Word),
+many or all of the OpenType features of Junicode can help you avoid using PUA
+characters directly.\\
+
+\noindent {\bfseries Characters with diacritics.}
+Both Unicode and MUFI contain large numbers of characters with diacritics.
+Make it a habit never to use these “precomposed” characters directly; rather
+use the “plain” character followed by a character from the Unicode “Combining
+Diacritics” range. (This works with Word for Windows when Uniscribe is
+enabled, and also with other OpenType-aware applications.) In almost all cases
+the application will either substitute the correct precomposed character or
+position the diacritic correctly. For characters with more than one diacritic,
+follow these rules: when diacritics are stacked vertically, insert the one
+closest to the base character first; when diacritics are arranged horizontally,
+insert the leftmost one first. Examples: a + macron + acute = ā́; o + dot +
+acute = . Remember that Unicode has both spacing and combining diacritics;
+only the combining diacritics will work correctly. If any combination fails to
+work for you, please leave a bug report at the Junicode website.\\
+
+\noindent {\bfseries Small caps.}
+Make it a hard-and-fast rule {\itshape never} to insert any small cap character
+into your documents. The encoding of small caps is inherently unstable and
+non-portable. Early versions of MUFI recommend using small cap-like characters from the
+Unicode phonetic ranges, but this would be an error with many fonts, including
+Junicode, which size phonetic “small caps” to harmonize with lower-case
+characters, whereas true small caps are somewhat larger. Always use the
+small caps command provided by the application you are using. If the
+application is able, it will use Junicode’s true small caps.
+
+You may use the “small caps” in the phonetic ranges to set IPA text. The
+“small cap” ʀ is also recommended for setting transliterations of early Norse
+runic texts.\\
+
+\noindent {\bfseries Nordic letter-shapes.}
+The default shape of ð and þ in Junicode is English: this is unusual in
+modern fonts. For the shapes used in Icelandic, specify the Icelandic
+language, if your application has good language support, or select
+“Style Set 1” (ss01): {\fontspec[Language=Icelandic]{Junicode} ðþ}.\\
+
+\noindent {\bfseries Insular letter-shapes.}  Insular letter-forms have
+recently been accepted by Unicode, and therefore their encodings have
+changed. For Junicode, use “Style Set 2” (ss02) for insular
+letter-forms if your application supports it:
+{\fontspec[StyleSet=insular]{Junicode} abcdefg.} Turn off “Standard
+Ligatures” (liga) for best results.\\
+
+\noindent {\bfseries Old English and Old Icelandic typography.}  When
+Old English or Old Icelandic is set with Junicode, some letter
+combinations can produce unattractive collisions. To avoid this, make
+sure that “Contextual Alternates” (calt) and “Standard Ligatures”
+(liga) are on (as they should be by default): hæfð hæfþ fūl nīð.\\
+
+\noindent {\bfseries Enlarged minuscules.}  In Junicode, “Style Set 6”
+(ss06) produces enlarged minuscules, thus:
+{\fontspec[StyleSet=enlarged]{Junicode} abcdefg.} Since the underlying
+text remains unchanged, enlarged text can be searched like normal
+text.\\
+
+\noindent {\bfseries Overlined characters.}  The MUFI specification
+envisions a font-based mechanism for producing text with
+overlines. Probably this will not be practical in the near future;
+rather, use your application’s line-drawing facilities to produce text
+with overlines. For Junicode, roman numbers are an exception. Use
+“Style Set 4” (ss04) for roman numbers with high overline
+({\fontspec[StyleSet=highline]{Junicode} viii XCXV}) and “Style Set 5”
+(ss05) for lower-case roman numbers with medium-high overline
+({\fontspec[StyleSet=medline]{Junicode} viii dclx}).\\
+
+\noindent {\bfseries Letters with hook above.} The Unicode standard
+contains several precomposed characters with combining hook above in
+the Latin Extended Additional range (e.g. ẢỎ). These are used
+automatically when a vowel is followed by the diacritic
+U+0309. However, MUFI contains a series of precomposed characters in
+which the hook differs in shape and position. Use “Style Set 14”
+(ss14) for the MUFI characters (e.g.
+\fontspec[StyleSet=althook]{Junicode}ẢỎ).\\
+
+\noindent {\bfseries Letters with flourishes.}
+For letters with flourishes (sometimes used for setting Middle English
+texts), use “Swash” (swsh):
+{\fontspec[Swash=on]{Junicode}c d f g k n r}.\\
+
+\noindent {\bfseries Ligatures.}  Nearly all of MUFI’s ligatures are
+accessible via “Historical Ligatures” (hlig).
+{\fontspec[LigType=hist]{Junicode}Even if you are not a medievalist,
+  you may still be amused by the strange effects you can achieve by
+  turning on this feature: egg track caught fan sock book save aardvark
+  chaos AA AO
+  AU AV.}\\
+
+\noindent {\bfseries Deleted text.}
+In medieval manuscripts, text is often deleted by placing a dot under each
+letter. Both Unicode and MUFI define many characters with dots below:
+{\fontspec[StyleSet=underdot]{Junicode} if possible, you should avoid
+hard-coding these and instead use} “Style Set 7” (ss07).\\
+
+\noindent {\bfseries Alternate yogh.}
+For Middle English, always use the yogh at U+021C and U+021D (Ȝȝ).
+Unicode also has an alternative yogh, which in Junicode has a
+flat top. If you prefer this, leave the underlying text the same and
+specify “Style Set 8” (ss08):
+{\fontspec[StyleSet=altyogh]{Junicode} Ȝȝ}.\\
+
+\noindent {\bfseries Deprecated characters.} A number of characters
+which were encoded in the Private Use Area in MUFI versions 1 and 2
+have been adopted by Unicode and now have different code points. In
+Junicode these characters remain at their old locations, but are
+marked with a small “x” to remind users to migrate to the newer code
+points (e.g. ). The file “replacements” contains a list of these
+deprecated code points with their replacements; use this to update
+your documents. If you are unable to change the encoding of an older
+document but you can use OpenType features, turn on “Style Set 3”
+(ss03); this will automatically substitute newer for older code
+points.\\
+
+\noindent {\bfseries E caudata.} Medieval Latin texts often use an
+          {\itshape e} with tail, called {\itshape e caudata}; this
+          represents Latin {\itshape ae} or {\itshape oe}. Polish,
+          Lithuanian, and several other languages also use this
+          letter. While in modern editions of medieval texts the
+          {\itshape cauda} (or in Polish, the {\itshape ogonek}) is
+          often attached to the very bottom of the letter, in modern
+          Polish and Lithuanian printing it is attached to the end of
+          the bottom stroke: Polish ę, medieval Latin
+          {\addfontfeatures{StyleSet=altogonek}ę}. The modern Polish
+          version of the letter is acceptable for medieval Latin;
+          however, if you prefer a centered {\itshape cauda}, use
+          “Style Set 15” (ss15).\\
+
+\noindent {\bfseries Mirrored runes.} In the regular face Junicode
+contains mirrored versions of runes. To access these, use
+Right-to-Left Mirroring (rtlm): {\addfontfeatures{MirrorRunes=on} ᚾᚪᛒᛋᚫᚾᚩᚱᚻ.}
+
+\pagebreak
+\subsection*{Old and Middle English}
+
+Wē æthrynon mid ūrum ārum þā ȳðan þæs dēopan wǣles; wē
+ġesāwon ēac þā muntas ymbe þǣre sealtan sǣ strande, and wē mid
+āðēnedum hræġle and ġesundfullum windum þǣr ġewīcodon on þām
+ġemǣrum þǣre fæġerestan þēode. Þā ȳðan ġetācniað þisne dēopan
+cræft, and þā muntas ġetācniað ēac þā miċelnyssa þisses cræftes.\\
+
+
+\noindent{\small\itshape Apply the OpenType feature ss02 (Style Set 2)
+for insular letter-forms.}\\[1ex]
+\fontspec[StyleSet=insular]{Junicode}
+Her cynewulf benam sigebryht his rices \& westseaxna wiotan for
+un\-ryht\-um dædum buton hamtunscire \& he hæfde þa oþ he ofslog
+þone aldorman þe him lengest wunode \& hiene þa cynewulf on
+andred adræfde \& he þær wunade oþ þæt hine an swan ofstang
+æt pryfetesflodan \& he wræc þone aldorman cumbran \& se cynewulf
+oft miclum gefeohtum feaht uuiþ bretwalum.\\
+
+\fontspec{Junicode}
+\noindent SIÞEN þe sege and þe assaut watz sesed at Troye,\\
+Þe borȝ brittened and brent to brondez and askez,\\
+Þe tulk þat þe trammes of tresoun þer wroȝt\\
+Watz tried for his tricherie, þe trewest on erthe:\\
+Hit watz Ennias þe athel, and his highe kynde,\\
+Þat siþen depreced prouinces, and patrounes bicome\\
+Welneȝe of al þe wele in þe west iles.
+
+\subsection*{Old Icelandic}
+
+\fontspec[Language=Icelandic]{Junicode}
+{\small\itshape For Nordic shapes of þ and ð, specify the Icelandic
+language, if your application has good language support; or apply the OpenType
+ss01 (Style Set 1) feature.}\\[1ex]
+Um haustit sendi Mǫrðr Valgarðsson orð at Gunnarr myndi vera einn heimi, en
+lið alt myndi vera niðri í eyjum at lúka heyverkum. Riðu þeir Gizurr Hvíti ok
+Geirr Goði austr yfir ár, þegar þeir spurðu þat, ok austr yfir sanda til Hofs.
+Þá sendu þeir orð Starkaði undir Þríhyrningi; ok fundusk þeir þar allir er at
+Gunnari skyldu fara, ok réðu hversu at skyldi fara.
+
+\subsection*{Runic}
+\fontspec{Junicode}
+ᚠᛁᛋᚳ ᚠᛚᚩᛞᚢ ᚪᚻᚩᚠ ᚩᚾ ᚠᛖᚱᚷᛖᚾᛒᛖᚱᛁᚷ ᚹᚪᚱᚦ ᚷᚪ᛬ᛇᚱᛁᚳ ᚷᚱᚩᚱᚾ ᚦᚨᚱ ᚻᛖ ᚩᚾ ᚷᚱᛖᚢᛏ ᚷᛁᛇᚹᚩᛗ
+ᚻᚱᚩᚾᚨᛇ ᛒᚪᚾ\\
+ᚱᚩᛗᚹᚪᛚᚢᛇ ᚪᚾᛞ ᚱᛖᚢᛗᚹᚪᛚᚢᛇ ᛏᚹᛟᚷᛖᚾ ᚷᛁᛒᚱᚩᚦᚫᚱ ᚪᚠᛟᛞᛞᚫ ᛞᛁᚫ ᚹᚣᛚᛁᚠ ᚩᚾ ᚱᚩᛗᚫ\linebreak[0]ᚳᚫᛇᛏᛁ᛬
+ᚩᚦᛚᚫ ᚢᚾᚾᛖᚷ
+
+\subsection*{Latin}
+
+{\small\itshape Junicode contains the most common Latin abbreviations,
+  making it suitable for diplomatic editions of Latin texts.}\\[1ex]
+{\addfontfeatures{StyleSet=altogonek}Adiuuanos dſ̄ ſalutariſ noſter \&
+ ꝓpt̄ głam nominiſ tui dnē liƀanoſ· \& ꝓpitiuſ eſto peccatiſ noſtriſ
+ ꝓpter nomen tuum· Ne forte dicant ingentib: ubi eſt dſ̄ eorum \&
+  innoteſcat innationib: corā oculiſ nr̄iſ· Poſuerunt moſticina
+  ſeruorū ruorū eſcaſ uolatilib: cęli carneſ ſcōꝝ tuoꝝ beſtiiſ tenice·
+  Facti ſum obꝓbrium uiciniſ nr̄iſ·}
+
+\subsection*{Gothic Transliteration}
+
+jabai auk ƕas gasaiƕiþ þuk þana habandan kunþi in galiuge stada
+anakumbjandan, niu miþwissei is siukis wisandins timrjada du
+galiugagudam gasaliþ matjan?  fraqistniþ auk sa unmahteiga ana
+þeinamma witubnja broþar in þize Xristus gaswalt.  swaþ~þan
+frawaurkjandans wiþra broþruns, slahandans ize gahugd siuka, du
+Xristau frawaurkeiþ.
+
+\subsection*{Sanskrit Transliteration}
+
+\noindent mānaṃ dvividhaṃ viṣayadvai vidyātśaktyaśaktitaḥ \\
+     arthakriyāyāṃ keśadirnārtho ’narthādhimokṣataḥ\\[1ex]
+sadṛśāsadṛśatvācca viṣayāviṣayatvataḥ \\
+     śabdasyānyanimittānāṃ bhāve dhīsadasattvataḥ
+
+\subsection*{International Phonetic Alphabet}
+\fontspec[IPAMode=on]{Junicode}
+hwɑn θɑt ɑːprɪl wiθ is ʃuːrəs soːtə θə drʊxt ɔf mɑrʧ hɑθ peːrsəd toː
+θə roːte ɑnd bɑːðəd ɛvrɪ væɪn ɪn swɪʧ lɪkuːr ɔf hwɪʧ vɛrtɪu
+ɛnʤɛndrəd ɪs θə fluːr hwɑn zɛfɪrʊs eːk wɪθ hɪs sweːtə bræːθ
+\fontspec{Junicode}
+
+\subsection*{Greek}
+
+{\small\itshape The Greek typeface (available only in the regular
+  face) is based on the Greek Double Pica cut by Alexander Wilson of
+  Glasgow in the eighteenth century. It is not really suitable for
+  setting modern Greek; those who want a more modern Greek face that
+  harmonizes well with Junicode should consider GFS Didot
+  Classic or GFS Porson.}\\[1ex]
+βίβλος
+γενέσεως ἰησοῦ χριστοῦ υἱοῦ δαυὶδ
+υἱοῦ ἀβραάμ.
+ἀβραὰμ
+ἐγέννησεν τὸν ἰσαάκ, ἰσαὰκ δὲ ἐγέννησεν
+τὸν ἰακώβ, ἰακὼβ δὲ ἐγέννησεν τὸν
+ἰούδαν καὶ τοὺς ἀδελφοὺς αὐτοῦ,
+ἰούδας
+δὲ ἐγέννησεν τὸν φάρες καὶ τὸν ζάρα
+ἐκ τῆς θαμάρ, φάρες δὲ ἐγέννησεν τὸν
+ἑσρώμ, ἑσρὼμ δὲ ἐγέννησεν τὸν ἀράμ,
+ἀρὰμ
+δὲ ἐγέννησεν τὸν ἀμιναδάβ, ἀμιναδὰβ
+δὲ ἐγέννησεν τὸν ναασσών, ναασσὼν δὲ
+ἐγέννησεν τὸν σαλμών,
+σαλμὼν
+δὲ ἐγέννησεν τὸν βόες ἐκ τῆς ῥαχάβ,
+βόες δὲ ἐγέννησεν
+
+\subsection*{Lithuanian}
+
+{\small\itshape Lithuanian poses several typographical challenges. An
+  accented i retains its dot: i̇́; and certain characters with ogonek
+  must avoid colliding with a following j:
+  {\upshape\addfontfeatures{Contextual=on} ęj ųj}. Make sure
+  Contextual Alternates (calt) is turned on; for i̇́, use i followed
+  by non-spacing dot accent (0307) and acute (0301).}\\[1ex]
+Visa žemė turėjo vieną kalbą ir tuos pačius žodžius.  Kai žmonės
+kėlėsi iš rytų, jie rado slėnį Šinaro krašte ir ten įsikūrė.  Vieni
+kitiems sakė: Eime, pasidirbkime plytų ir jas išdekime. – Vietoj
+akmens jie naudojo plytas, o vietoj kalkių – bitumą.  Eime, – jie
+sakė, – pasistatykime miestą ir bokštą su dangų siekiančia viršūne ir
+pasidarykime sau vardą, kad nebūtume išblaškyti po visą žemės veidą.
+
+\subsection*{Polish}
+{\small\itshape At the urging of Polish type designer Adam Twardoch,
+the default shape and position of ogonek in Junicode are now suitable
+for modern Polish. Suggestions for further improvements are solicited.}\\[1ex]
+Mieszkańcy całej ziemi mieli jedną mowę, czyli jednakowe słowa.  A
+gdy wędrowali ze wschodu, napotkali równinę w kraju Szinear i tam
+zamieszkali.  I mówili jeden do drugiego: Chodźcie, wyrabiajmy cegłę
+i wypalmy ją w ogniu. A gdy już mieli cegłę zamiast kamieni i smołę
+zamiast zaprawy murarskiej, rzekli: Chodźcie, zbudujemy sobie miasto
+i wieżę, której wierzchołek będzie sięgał nieba, i w ten sposób
+uczynimy sobie znak, abyśmy się nie rozproszyli po całej ziemi.
+
+\pagebreak
+
+\fontspec{Junicode}
+\noindent {\tiny \sampletext} {\small \sampletext} {\large \sampletext}
+{\Large \sampletext} {\LARGE \sampletext} {\huge \sampletext}\\
+
+{\itshape\noindent {\tiny \sampletext} {\small \sampletext} {\large \sampletext}
+{\Large \sampletext} {\LARGE \sampletext} {\huge \sampletext}}\\
+
+\noindent {\scshape {\tiny \sctext} {\small \sctext} {\large \sctext}
+{\Large \sctext} {\LARGE \sctext}}
+
+\pagebreak
+
+{\bfseries\noindent {\tiny \sampletext} {\small \sampletext} {\large \sampletext}
+{\Large \sampletext} {\LARGE \sampletext} {\huge \sampletext}}\\
+
+{\bfseries\itshape\noindent {\tiny \sampletext} {\small \sampletext} {\large \sampletext}
+{\Large \sampletext} {\LARGE \sampletext} {\huge \sampletext}}\\
+
+\noindent{\LARGE abcdefghijklmnopqrstuvwxyz æðþȝ\\
+ABCDEFGHIJKLMNOPQRSTUVWXYZ ÆÐÞȜ\\
+αβγδεζηθικλμνξοπρςστυφχψω\\
+ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ}
+
+\pagebreak
+
+
+\noindent The Junicode font is available at
+http://junicode.sourceforge.net/. You can also find it in the
+repositories of many Linux distributions, and also via CTAN. Visit the
+Junicode Project Page at SourceForge to leave feature requests and bug
+reports. Contributions are welcome: if you wish to contribute to
+Junicode, leave a patch at the Project Page or contact the
+developer.\\
+
+\subsection*{Developer}
+Peter S. Baker, University of Virginia
+
+\subsection*{Contributors}
+Denis Moyogo Jacquerye\\
+Adam Buchbinder\\
+Pablo Rodriguez\\
+
+\noindent Thanks to the many users who have submitted feature requests
+and bug reports.\\
+
+\def\reflect#1{{\setbox0=\hbox{#1}\rlap{\kern0.5\wd0
+  \special{x:gsave}\special{x:scale -1 1}}\box0 \special{x:grestore}}}
+\def\XeTeX{\leavevmode
+  \setbox0=\hbox{X\lower.5ex\hbox{\kern-.15em\reflect{E}}\kern-.1667em \TeX}%
+  \dp0=0pt\ht0=0pt\box0 }
+
+\noindent This document was set with {\XeTeX}.
+\end{document}
