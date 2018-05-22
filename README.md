@@ -6,7 +6,8 @@
 
 ## 專案資源
 
-* 沙盒採用了[EasySandbox](https://github.com/daveho/EasySandbox)
+* 新版沙盒基於 linux seccomp 實作，具備 Web API 接口，目前支援 C 語言編譯與執行，簡要演示可見 [Sandbox API demo](http://zake7749.github.io/NCKU-Online-Judge/index.html)
+* 舊版沙盒採用了[EasySandbox](https://github.com/daveho/EasySandbox)
 * 測試題目集來自 [UVA](https://uva.onlinejudge.org/) 與 [POJ](http://poj.org/)。
 
 ## 搭建環境
